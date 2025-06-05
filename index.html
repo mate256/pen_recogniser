@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>📷 Toll detektáló</title>
+    <style>
+        #webcam-container canvas {
+            border-radius: 10px;
+            max-width: 100%;
+            border: 2px solid black;
+        }
+
+        #status {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📷 Toll detektáló</h1>
+    <button id="switchBtn">🔄 Kamera váltás</button>
+
+    <div id="webcam-container"></div>
+    <div id="status">⏳ Modell betöltése...</div>
+
+    <!-- FONTOS: előbb a könyvtárak jönnek -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.3.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+
+    <!-- UTÁNA jön a saját script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
